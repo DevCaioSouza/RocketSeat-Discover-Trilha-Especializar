@@ -9,3 +9,8 @@ async function start(){
 }
 
 start()
+
+//A ideia em usar await é transformar um encadeamento
+//em algo síncrono
+
+//tambem podemos usar try catch
