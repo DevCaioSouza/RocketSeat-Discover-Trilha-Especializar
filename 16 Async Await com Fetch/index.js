@@ -1,4 +1,4 @@
-
+import fetch from "node-fetch"
 
 fetch('https://api.github.com/users/maykbrito')
   .then(response => response.json())
