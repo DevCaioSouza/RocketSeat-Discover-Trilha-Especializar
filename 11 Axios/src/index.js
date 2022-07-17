@@ -1,10 +1,11 @@
 import axios from "axios";
 
-axios.get('https://api.github.com/users/maykbrito')
+axios
+    .get('https://api.github.com/users/maykbrito')
     .then(response => {
         const user = response.data
 
-        axios.get(user.repos_url)
-            .then(repos => console.log(repos.data))
+        return axios.get(user.repos_url)
     })
+    .then(repos => console.log(repos.data))
     .catch(err => console.log(err))
