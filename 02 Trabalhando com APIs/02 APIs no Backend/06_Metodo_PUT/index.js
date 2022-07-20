@@ -9,6 +9,8 @@ let author = "Caio"
 //middleware
 app.use(express.json())
 
+app.route('/').get((req, res) => res.send(author))
+
 app.route('/').put((req, res) => {
   author = req.body
   res.send(author)
