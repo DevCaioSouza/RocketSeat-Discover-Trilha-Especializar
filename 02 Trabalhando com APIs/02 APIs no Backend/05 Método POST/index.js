@@ -2,18 +2,17 @@ const express = require('express');
 
 const app = express()
 
-//ao escrever express() estamos inicializando a constante express
-
 app.listen('3000')
 
-//no package.json temos "main": "index.js"
-//indicando que esse é um arquivo de referência
+//middleware: ponte entre as requisições
+//app.use() é um método usado para fazer middlewares
 
-app.route('/').get((req, res) => res.send("Hello"))
-app.route('/sobre').get((req, res) => res.send("Hello sobre"))
-app.route('/contato').get((req, res) => res.send("Hello contato"))
+app.use(express.json())
 
-//o browser fica "procurando" as rotas e esperando algum retorno
+app.route('/').post((req, res) => res.send(req.body))
+
+//tudo enviado no POST é recebido no req
+
 
 //sempre precisamos parar o terminal (ctrl+c) e rodar de novo
 //para vermos as alterações
