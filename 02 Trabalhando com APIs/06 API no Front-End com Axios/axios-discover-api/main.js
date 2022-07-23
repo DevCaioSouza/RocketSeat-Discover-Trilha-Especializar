@@ -8,7 +8,22 @@ function getUsers() {
     .catch(error => console.error(error))
 }
 
+function addNewUser(){
+  axios.post(url, newUser)
+  .then(response => {
+    console.log(response)
+  })
+  .catch(error => console.error(error))
+}
+
 getUsers()
+// addNewUser()
+
+const newUser = {
+  name: "Olivia Zars",
+  avatar: "https://picsum.photos/200/300",
+  city: "Rio de Janeiro"
+}
 
 //console.error é pra ficar destacado de vermelho
 
