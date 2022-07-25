@@ -16,8 +16,21 @@ function addNewUser(){
   .catch(error => console.error(error))
 }
 
+function getUser(id){
+  axios.get(`${url}/${id}`)
+  .then(response => {
+    const data = response.data
+    userName.textContent = data.name
+    userCity.textContent = data.city
+    userId.textContent = data.id 
+    userAvatar.src = data.avatar
+  })
+  .catch(error => console.error(error))
+}
+
 getUsers()
-// addNewUser()
+getUser(1)
+
 
 const newUser = {
   name: "Olivia Zars",
@@ -25,6 +38,7 @@ const newUser = {
   city: "Rio de Janeiro"
 }
 
+addNewUser()
 //console.error é pra ficar destacado de vermelho
 
 // o data do response.data é pra ir direto no users

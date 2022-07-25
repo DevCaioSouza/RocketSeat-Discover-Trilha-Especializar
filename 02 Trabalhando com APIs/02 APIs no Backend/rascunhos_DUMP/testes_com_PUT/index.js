@@ -8,9 +8,9 @@ jogadorCaro = 'Caio'
 
 app.use(express.json())
 
-app.route('/').get((req, res) => res.send(jogadorCaro))
+app.route('/').get(( ___ , res) => res.send(jogadorCaro))
 
 app.route('/').put((req, res) => {
-  jogadorCaro = req.body.jogadorCaro
+  jogadorCaro = req.body
   res.send(jogadorCaro)
 })
